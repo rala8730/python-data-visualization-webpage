@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `1990` (
+CREATE TABLE IF NOT EXISTS `ninety` (
 
 `State` varchar(2) NOT NULL,
 
@@ -14,7 +14,7 @@ PRIMARY KEY (`state`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `1990` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
+INSERT INTO `ninety` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
 
 ('AK', 1.2, 16.1, 17.3, 34.6),
 
@@ -118,7 +118,7 @@ INSERT INTO `1990` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
 
 ('WY', 43.3, 8.3, 5.4, 57),
 
-CREATE TABLE IF NOT EXISTS `2000` (
+CREATE TABLE IF NOT EXISTS `tw0thousand` (
 
 `State` varchar(2) NOT NULL,
 
@@ -134,7 +134,7 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `2000` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+INSERT INTO `twothousand` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('AK', 1.6, 19.5, 23.2, 44.3),
 
@@ -236,9 +236,9 @@ INSERT INTO `2000` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('WV', 92.3, 14.2, 8.4, 114.9),
 
-('WY', 47.8, 9.7, 5.6, 63.1);
+('WY', 47.8, 9.7, 5.6, 63.1),
 
-CREATE TABLE IF NOT EXISTS `2010` (
+CREATE TABLE IF NOT EXISTS `ten` (
 
 `State` varchar(2) NOT NULL,
 
@@ -254,7 +254,7 @@ PRIMARY KEY (`state`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `2010` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
+INSERT INTO `ten` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
 
 ('AK', 1.4, 19.4, 17.8, 38.5),
 
@@ -356,9 +356,9 @@ INSERT INTO `2010` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
 
 ('WV', 80, 12.9, 6.5, 99.4),
 
-('WY', 45.7, 11.2, 8.2, 65.1);
+('WY', 45.7, 11.2, 8.2, 65.1),
 
-CREATE TABLE IF NOT EXISTS `2013` (
+CREATE TABLE IF NOT EXISTS `thirteen` (
 
 `State` varchar(2) NOT NULL,
 
@@ -374,7 +374,7 @@ PRIMARY KEY (`state`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `2013` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
+INSERT INTO `thirteen` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
 
 ('AK', 1.4, 17, 17.7, 36.1),
 

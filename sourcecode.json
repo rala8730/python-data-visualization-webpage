@@ -1,18 +1,16 @@
-
 tamap({
-  element: document.getElementById("bubbles"),
-  geographyConfig: {
-    popupOnHover: false,
-    highlightOnHover: false
-  },
-  fills: {
-    defaultFill: '#ABDDA4',
-    USA: 'blue',
-    RUS: 'red'
-  }
+    element: document.getElementById("bubbles"),
+    geographyConfig: {
+        popupOnHover: false,
+        highlightOnHover: false
+    },
+    fills: {
+        defaultFill: '#ABDDA4',
+        USA: 'blue',
+        RUS: 'red'
+    }
 });
-bubble_map.bubbles([
-  {
+bubble_map.bubbles([{
     name: 'Not a bomb, but centered on Brazil',
     radius: 23,
     centered: 'BRA',
@@ -20,8 +18,7 @@ bubble_map.bubbles([
     yeild: 0,
     fillKey: 'USA',
     date: '1954-03-01'
-  },
-  {
+}, {
     name: 'Castle Bravo',
     radius: 25,
     yeild: 15000,
@@ -31,7 +28,7 @@ bubble_map.bubbles([
     date: '1954-03-01',
     latitude: 11.415,
     longitude: 165.1619
-  },{
+}, {
     name: 'Tsar Bomba',
     radius: 70,
     yeild: 50000,
@@ -41,10 +38,11 @@ bubble_map.bubbles([
     date: '1961-10-31',
     latitude: 73.482,
     longitude: 54.5854
-  }
-], {
-  popupTemplate: function(geo, data) {
-    return '<div class="hoverinfo">Yield:' + data.yeild + '
-Exploded on ' + data.date + ' by the '  + data.country + ''
-  }
+}], {
+    popupTemplate: function(geo, data) {
+        return '<div class="hoverinfo">Yield:' + data.yeild + '
+        Exploded on ' + data.date + '
+        by the '  + data.country + '
+        '
+    }
 });

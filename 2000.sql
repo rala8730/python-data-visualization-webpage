@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `2000` (
+CREATE TABLE IF NOT EXISTS `twothousand` (
 
 `State` varchar(2) NOT NULL,
 
@@ -14,7 +14,7 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `1990` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+INSERT INTO `twothousand` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('AK', 1.6, 19.5, 23.2, 44.3),
 
@@ -116,4 +116,4 @@ INSERT INTO `1990` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('WV', 92.3, 14.2, 8.4, 114.9),
 
-('WY', 47.8, 9.7, 5.6, 63.1),
+('WY', 47.8, 9.7, 5.6, 63.1);

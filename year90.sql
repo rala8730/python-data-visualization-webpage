@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `1990` (
+CREATE TABLE IF NOT EXISTS `ninty` (
 
 `State` varchar(2) NOT NULL,
 
@@ -14,7 +14,7 @@ PRIMARY KEY (`state`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `1990` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
+INSERT INTO `ninty` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
 
 ('AK', 1.2, 16.1, 17.3, 34.6),
 
@@ -116,4 +116,4 @@ INSERT INTO `1990` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
 
 ('WV', 82.3, 14.4, 6.8, 103.5),
 
-('WY', 43.3, 8.3, 5.4, 57),
+('WY', 43.3, 8.3, 5.4, 57);
