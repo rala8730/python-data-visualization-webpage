@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `yearNinety` (
+CREATE TABLE IF NOT EXISTS `1990` (
 
 `State` varchar(2) NOT NULL,
 
@@ -14,7 +14,7 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `yearNinety` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+INSERT INTO `1990` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('AK', 1.2, 16.1, 17.3, 34.6),
 
@@ -118,7 +118,7 @@ INSERT INTO `yearNinety` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('WY', 43.3, 8.3, 5.4, 57);
 
-CREATE TABLE IF NOT EXISTS `yearZeroZero` (
+CREATE TABLE IF NOT EXISTS `2000` (
 
 `State` varchar(2) NOT NULL,
 
@@ -134,7 +134,7 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `yearZeroZero` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+INSERT INTO `2000` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('AK', 1.6, 19.5, 23.2, 44.3),
 
@@ -238,7 +238,7 @@ INSERT INTO `yearZeroZero` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('WY', 47.8, 9.7, 5.6, 63.1);
 
-CREATE TABLE IF NOT EXISTS `yearTwentyTen` (
+CREATE TABLE IF NOT EXISTS `2010` (
 
 `State` varchar(2) NOT NULL,
 
@@ -254,7 +254,7 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `yearTwentyTen` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+INSERT INTO `2010` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
 
 ('AK', 1.4, 19.4, 17.8, 38.5),
 
@@ -358,7 +358,7 @@ INSERT INTO `yearTwentyTen` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUE
 
 ('WY', 45.7, 11.2, 8.2, 65.1);
 
-CREATE TABLE IF NOT EXISTS `yearTwentyThirteen` (
+CREATE TABLE IF NOT EXISTS `2013` (
 
 `State` varchar(2) NOT NULL,
 
@@ -374,7 +374,7 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
-INSERT INTO `yearTwentyThirteen` (`State`, `Coal`, `Petroluem`, `Gas`, `Total`) VALUES
+INSERT INTO `2013` (`State`, `Coal`, `Petroluem`, `Gas`, `Total`) VALUES
 
 ('AK', 1.4, 17, 17.7, 36.1),
 
