@@ -134,7 +134,11 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
+<<<<<<< HEAD
 INSERT INTO `yearZeroZero` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+=======
+INSERT INTO `2000` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+>>>>>>> 07d75662a1974be802a99edb60df23b9b225cd07
 
 ('AK', 1.6, 19.5, 23.2, 44.3),
 
@@ -254,7 +258,11 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
+<<<<<<< HEAD
 INSERT INTO `yearTwentyTen` (`State`, `Coal`, `Petroleum`, `Gas`, `Total`) VALUES
+=======
+INSERT INTO `2010` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
+>>>>>>> 07d75662a1974be802a99edb60df23b9b225cd07
 
 ('AK', 1.4, 19.4, 17.8, 38.5),
 
@@ -374,7 +382,11 @@ PRIMARY KEY (`State`)
 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
+<<<<<<< HEAD
 INSERT INTO `yearTwentyThirteen` (`State`, `Coal`, `Petroluem`, `Gas`, `Total`) VALUES
+=======
+INSERT INTO `2013` (`State`, `Coal`, `Petroluim`, `Gas`, `Total`) VALUES
+>>>>>>> 07d75662a1974be802a99edb60df23b9b225cd07
 
 ('AK', 1.4, 17, 17.7, 36.1),
 
