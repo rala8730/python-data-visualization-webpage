@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+import MySQLdb
+
+################please enter your password in the place of password#######
+# open databases connection
+db = MySQLdb.connect("localhost","root","password","pollutiondata" )
+
 print "content-type: text/html"
 print 
 contents ='''
@@ -24,3 +30,18 @@ contents ='''
 print contents
 print "</body></html>"
 
+#prepare SQl query to UPDATE required records
+cursor=db.cursor()
+# execute SQL query using execute() method.
+#cursor.execute("SELECT * FROM `1990`,`2000`,`2010`,`2013`")
+cursor.execute("SELECT * FROM `1990`")
+
+# Fetch a single row using fetchone() method.
+data = cursor.fetchall()
+
+print data
+
+# disconnect from server
+db.close()   
+#steps 
+# read the databases and color the map based on the dense population
