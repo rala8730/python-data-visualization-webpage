@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+import cgi, cgitb
+import json
+
+print "content-type: text/html"
+print
+
+contents= '''
 <html>
 <head>
    <title> Pollution in the U.S. </title>
@@ -11,14 +19,15 @@
   <!-- this link to the source code -->
   <!--<p><a href="http://datamaps.github.io/">DataMaps Project Homepage</a></p> -->
   <!-- changing the width in the div below will change the size of the map --> 
-  <div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+  <div id="container" style="position: relative; width:500px;height: 300px;"></div>
  
      
      <script>
-       //basic map config with custom fills, mercator projection
       var map = new Datamap({
+        scope: 'usa',
         element: document.getElementById('container'),
-	scope:'usa'
-	});
+	  });
 	</script>
-	</body>
+'''
+print contents
+print"</body></html>"
