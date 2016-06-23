@@ -9,7 +9,7 @@ print
 con = """
 <html>
 <head>
-   <title> Pollution in the U.S. </title>
+   <title> Carbon emissions per state </title>
 </head>
 <body>
 
