@@ -3,7 +3,7 @@ import MySQLdb
 
 ################please enter your password in the place of password#######
 # open databases connection
-db = MySQLdb.connect("localhost","root","gorkha","pollutiondata" )
+db = MySQLdb.connect("localhost","root","password","pollutiondata" )
 print "content-type: text/html"
 print 
 con = '''
