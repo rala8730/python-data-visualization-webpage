@@ -1,75 +1,82 @@
 #!/usr/bin/env python
 import MySQLdb
 
-################please enter your password in the place of password#######
 # open databases connection
+#here, please enter the the username, passwaord, and mysql database you created
+#you will have to do this for all four webpages
 db = MySQLdb.connect("localhost","sarah","test","pollution2")
+
+##beginning of the HTML header/webpage
 print "content-type: text/html"
 print
  
 con = '''
 <html>
+
 <head>
-   <title> Pollution in the U.S. </title>
+   <title> Carbon Emissions (1990) </title>
+   <link rel="stylesheet" type="text/css" href="MyStyle.css">
 </head>
 <body>
 
-
+  <h2>Carbon Emissions In Each State</h2>
+  The map below visualizes data taken from the U.S. Energy Information Administration (EIA) Website for </br>
+   annual carbon emissions per State in Million Metric tons of CO<sub>2</sub>, and includes a breakdown of the</br>
+    individual contributions in each state due to Petroleum, Gas, and Coal.</br></br>
+   <!--These three link to the source code for the map visualization --> 
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
   <script src="http://datamaps.github.io/scripts/0.5.4/datamaps.all.min.js"></script>
-  <!-- this link to the source code -->
-  <!--<p><a href="http://datamaps.github.io/">DataMaps Project Homepage</a></p> -->
-  <!-- changing the width in the div below will change the size of the map -->
-<form> <span class="Button_explanation">Choose year to visualise: </span>
+  
+  <!--Allows user to switch between years.  We had to link to multiple webpages -->
+  <form> <span class="Button_explanation">Choose year to visualise: </span>
+  <button formaction="/cgi-bin/main.py">1990</button>
+  <button formaction="/cgi-bin/main2.py"> 2000</button>
+  <button formaction="/cgi-bin/main3.py">2010</button>
+  <button formaction="/cgi-bin/main4.py">2013</button>
+  </form>
 
-<button formaction="/cgi-bin/main.py">1990</button>
-<button formaction="/cgi-bin/main2.py"> 2000</button>
- <button formaction="/cgi-bin/main3.py">2010</button>
- <button formaction="/cgi-bin/main4.py">2013</button>
-</form>
-  <div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+  <!-- creates a 'container' to hold the map visualization -->
+  <div id="container" style="position: relative; width: 900px; height: 600px;"></div>
 
  
      
      <script>
-	/*
-       //basic map config with custom fills, mercator projection
-      var map = new Datamap({
-        element: document.getElementById('container'),
-	scope:'usa'
-	});
-	*/
-
+	//Creates an instance of the map
 	var map  = new Datamap({
-  scope: 'usa',
-  element: document.getElementById('container'),
-  geographyConfig: {
-    highlightBorderColor: '#bada55',
-  popupTemplate: function(geography, data) {
-      return '<div class="hoverinfo">' + 
-'Total:' +  data.Total + '</br>' +  'Coal:' + data.Coal + '</br>' +  'Petroleum:' + data.Pet + '</br>' +  'Gas:' + data.Gas +' '
-    },
-    highlightBorderWidth: 3
-  },
+ 	 scope: 'usa',
+ 	 element: document.getElementById('container'),
+  	 //this fetches the map JSON
+	 geographyConfig: {
+    	  highlightBorderColor: '#bada55',
+  	  //creates the information displayed in the Popup hover
+ 	  popupTemplate: function(geography, data) {
+	   return '<div class="hoverinfo">' + '<b>'+ geography.properties.name +'</b> </br>' +
+	   'Total:' +  data.Total + '</br>' +  'Coal:' + data.Coal + '</br>' +  'Petroleum:' + data.Pet + '</br>' +  'Gas:' + data.Gas +' '
+   	   },
+   	 highlightBorderWidth: 3
+ 	 },
+	 //map chloropeth fills
+ 	 fills: {
+ 	  '0-50': '#ccffff',
+ 	  '51-100': '#66ccff',
+ 	  '101-150': '#3399ff',
+ 	  '151-200': '#0066ff',
+ 	  '201-300': '#0000ff',
+ 	  '301-400': '#0000cc',
+ 	  '400+': '#000099',
+ 	  defaultFill: '#EDDC4E'
+	 },
 
-  fills: {
-  '0-50': '#ccffff',
-  '51-100': '#66ccff',
-  '101-150': '#3399ff',
-  '151-200': '#0066ff',
-  '201-300': '#0000ff',
-  '301-400': '#0000cc',
-  '400+': '#000099',
-  defaultFill: '#EDDC4E'
-},
-data:{
+	 data:{
 '''
 print con
 cursor=db.cursor()
 
+#in each .py file a different table in the database in accessed
 cursor.execute("SELECT * FROM `1990`")
 
+#defines the colors to be returned by the chloropeth
 def filler(value):
 	if value > 400:
 		return "400+"
@@ -86,6 +93,7 @@ def filler(value):
 	else:
 		return "0-50"
 
+#this loops through the database, and fills in values according to each state. 
 for row in cursor.fetchall():
 	#print(row[0])
 	state = row[0]
@@ -106,32 +114,24 @@ for row in cursor.fetchall():
 	'''%(state, color, coal, pet, gas, total)
 
 footer = '''
-}
-});
+	  }
+	});
 map.legend();
 map.labels();
 	</script>
-<!--<form name="myform" method="GET" action="cgi-bin/access.py">
-<input type= "text" id="name" name ="name" >
-<input type = "text" id="product"name ="product" >
-<input type = "submit"> -->
-	
+</br></br></br>
+   Carbon Dioxide occurs naturally in the atmosphere, however, human activities alter the carbon cycle by adding more CO<sub>2</sub> to it.</br> The main human activity that emits CO<sub>2</sub> is the combustion of fossil fuels (oil, natural gas, and coal). </br></br>
+   Changes in Carbon emissions are influenced by many factors, some being changes in population, seasonal temperatures, and new technologies. </br>
+ Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveal a slight increase in emissions (about 9%)</br>
+ since 1990, which reflects increased energy usage due to a growing population and changing economy.
+
+
+
+
 </body>
 
 '''
 print footer
-#prepare SQl query to UPDATE required records
-#cursor=db.cursor()
-# execute SQL query using execute() method.
-#cursor.execute("SELECT * FROM `1990`,`2000`,`2010`,`2013`")
-#cursor.execute("SELECT * FROM `1990`")
-
-# Fetch a single row using fetchone() method.
-#data = cursor.fetchall()
-
-#print (data)
 
 # disconnect from server
 db.close()   
-#steps 
-# read the databases and color the map based on the dense population
