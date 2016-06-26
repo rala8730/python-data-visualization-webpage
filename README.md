@@ -1,10 +1,2 @@
-# software_dev_project  
-Reference Code:    
-http://datamaps.github.io
-
-connecting the .sql database from python
-http://www.tutorialspoint.com/python/python_database_access.htm
-
-
-html button:  http://wwhttps://ourworldindata.org/wp-content/uploads/datamaps/readFromCSV_autobucket_switchByButtons_infantmortality_longrun/readFromCSV_autobucket_switchByButtons_infantmortality_longrun.htmlw.w3schools.com/jsref/tryit.asp?filename=tryjsref_pushbutton_create
-  
+Data Visualization Webpage  
+Welcome to our CSCI 3308 Project Repository.  We (Rami, Sarah, Ehsam, and Rasmi) have created a webpage using HTML, Python,   and mySQL, which displays an animated Chloropeth map to visualize Carbon Emmissions per state in the United States over the past two decades.  The states are color-coded according to the annual amount of pollution per state in Million metric tons of carbon dioxide, and a cursor hover over a particular state will display a breakdown of that state's Carbon emissions per type in petroleum, coal, and gas.  There are links between four pages, and a button navigation for the user to select which year   of data they would like to view.
