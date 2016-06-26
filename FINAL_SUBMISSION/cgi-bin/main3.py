@@ -4,7 +4,7 @@ import MySQLdb
 # open databases connection
 #here, please enter the the username, passwaord, and mysql database you created
 #you will have to do this for all four webpages
-db = MySQLdb.connect("localhost","sarah","test","pollution2")
+db = MySQLdb.connect("localhost","root","password","pollutiondata")
 
 ##beginning of the HTML header/webpage
 print "content-type: text/html"
@@ -17,12 +17,13 @@ con = '''
    <title> Carbon Emissions (2010) </title>
    <link rel="stylesheet" type="text/css" href="MyStyle.css">
 </head>
-<body>
+<body style="margin-left: 200px; margin-right: 200px; margin-top: 50px; margin-bottom: 50px;">
 
   <h2>Carbon Emissions In Each State</h2>
-  The map below visualizes data taken from the U.S. Energy Information Administration (EIA) Website for </br>
-   annual carbon emissions per State in Million Metric tons of CO<sub>2</sub>, and includes a breakdown of the</br>
-    individual contributions in each state due to Petroleum, Gas, and Coal.</br></br>
+  <p>
+  The map below visualizes data taken from the U.S. Energy Information Administration (EIA) Website for
+   annual carbon emissions per State in Million Metric tons of CO<sub>2</sub>, and includes a breakdown of the
+    individual contributions in each state due to Petroleum, Gas, and Coal.</p></br>
    <!--These three link to the source code for the map visualization --> 
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
@@ -37,7 +38,7 @@ con = '''
   </form>
 
   <!-- creates a 'container' to hold the map visualization -->
-  <div id="container" style="position: relative; width: 900px; height: 600px;"></div>
+  <div id="container" style="position: relative; width: 900px; height: 600px; margin: auto;"></div>
 
  
      
@@ -51,7 +52,7 @@ con = '''
     	  highlightBorderColor: '#bada55',
   	  //creates the information displayed in the Popup hover
  	  popupTemplate: function(geography, data) {
-	   return '<div class="hoverinfo">' + '<b>'+ geography.properties.name +'</b> </br>' +
+	   return '<div class="hoverinfo" style="background-color:rgba(38, 82, 91, 0.9); color:white;">' + '<b>'+ geography.properties.name +'</b> </br>' +
 	   'Total:' +  data.Total + '</br>' +  'Coal:' + data.Coal + '</br>' +  'Petroleum:' + data.Pet + '</br>' +  'Gas:' + data.Gas +' '
    	   },
    	 highlightBorderWidth: 3
@@ -120,11 +121,13 @@ map.legend();
 map.labels();
 	</script>
 </br></br></br>
-   Carbon Dioxide occurs naturally in the atmosphere, however, human activities alter the carbon cycle by adding more CO<sub>2</sub> to it.</br> The main human activity that emits CO<sub>2</sub> is the combustion of fossil fuels (oil, natural gas, and coal). </br></br>
-   Changes in Carbon emissions are influenced by many factors, some being changes in population, seasonal temperatures, and new technologies. </br>
- Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveal a slight increase in emissions (about 9%)</br>
+<p>
+   Carbon occurs naturally in the atmosphere, however, human activities alter the carbon cycle by adding more CO<sub>2</sub> to it. The main human activity that emits CO<sub>2</sub> is the combustion of fossil fuels (oil, natural gas, and coal).</p>
+   <p>
+ Changes in Carbon emissions are influenced by many factors, some being changes in population, seasonal temperatures, and new technologies. 
+ Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveal a slight increase in emissions (about 9%)
  since 1990, which reflects increased energy usage due to a growing population and changing economy.
-
+</P>
 
 
 
