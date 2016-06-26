@@ -22,10 +22,9 @@ con = '''
   <!--<p><a href="http://datamaps.github.io/">DataMaps Project Homepage</a></p> -->
   <!-- changing the width in the div below will change the size of the map -->
 <form> <span class="Button_explanation">Choose year to visualise: </span>
-
-<button formaction="/cgi-bin/main.py">1990</button>
-<button formaction="/cgi-bin/main2.py"> 2000</button>
- <button formaction="/cgi-bin/main3.py">2010</button>
+ <button formaction="/cgi-bin/main.py">1990</button>
+ <button formaction="/cgi-bin/main2.py"> 2000</button>
+ <button formaction="/cgi-bin/main3.py"> 2010</button>
  <button formaction="/cgi-bin/main4.py">2013</button>
 </form>
   <div id="container" style="position: relative; width: 500px; height: 300px;"></div>
@@ -68,7 +67,7 @@ data:{
 print con
 cursor=db.cursor()
 
-cursor.execute("SELECT * FROM `1990`")
+cursor.execute("SELECT * FROM `2000`")
 
 def filler(value):
 	if value > 400:
