@@ -124,7 +124,7 @@ map.labels();
    </P>
    <p>
   Changes in Carbon emissions are influenced by many factors, some being changes in population, seasonal temperatures, and new technologies. 
- Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveal a slight increase in emissions (about 9%)
+ Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveals a slight increase in emissions (about 9%)
  since 1990, which reflects increased energy usage due to a growing population and changing economy.
 
 
