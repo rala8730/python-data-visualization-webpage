@@ -125,7 +125,7 @@ map.labels();
    Carbon occurs naturally in the atmosphere, however, human activities alter the carbon cycle by adding more CO<sub>2</sub> to it. The main human activity that emits CO<sub>2</sub> is the combustion of fossil fuels (oil, natural gas, and coal).</p>
    <p>
  Changes in Carbon emissions are influenced by many factors, some being changes in population, seasonal temperatures, and new technologies. 
- Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveal a slight increase in emissions (about 9%)
+ Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveals a slight increase in emissions (about 9%)
  since 1990, which reflects increased energy usage due to a growing population and changing economy.
 </P>
 
