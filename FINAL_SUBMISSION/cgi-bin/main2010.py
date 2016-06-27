@@ -1,19 +1,17 @@
 #!/usr/bin/env python
 
-"""
-This package shows the year of 1990 carbon emission data of united states. The data is shown on the map. The map is color
+"""@auto-doc
+This package shows the year of 2010 carbon emission data of united states. The data is shown on the map. The map is color
 coded based on the carbon emission, higher the carbon emission darker the color and vice versa. The map also shows the number 
 of carbon emission of each state ,it shows  state name, total, coal, petroleum and gas emission. This page has buttons which
-are linked to 2013, 2010 and 2000.
+are linked to 2013, 1990 and 2000.
 """
 import MySQLdb
-
 
 # open databases connection
 #here, please enter the the username, passwaord, and mysql database you created
 #you will have to do this for all four webpages
-
-db = MySQLdb.connect("localhost","root","password","pollutiondata")
+db = MySQLdb.connect("localhost","root","gorkha","pollutiondata")
 
 ##beginning of the HTML header/webpage
 print "content-type: text/html"
@@ -23,14 +21,14 @@ con = '''
 <html>
 
 <head>
-   <title> Carbon Emissions (1990) </title>
+   <title> Carbon Emissions (2010) </title>
    <link rel="stylesheet" type="text/css" href="MyStyle.css">
 </head>
 <body style="margin-left: 200px; margin-right: 200px; margin-top: 50px; margin-bottom: 50px;">
 
   <h2>Carbon Emissions In Each State</h2>
   <p>
-  The map below visualizes data taken from the U.S. Energy Information Administration (EIA) Website for 
+  The map below visualizes data taken from the U.S. Energy Information Administration (EIA) Website for
    annual carbon emissions per State in Million Metric tons of CO<sub>2</sub>, and includes a breakdown of the
     individual contributions in each state due to Petroleum, Gas, and Coal.</p></br>
    <!--These three link to the source code for the map visualization --> 
@@ -40,10 +38,10 @@ con = '''
   
   <!--Allows user to switch between years.  We had to link to multiple webpages -->
   <form> <span class="Button_explanation">Choose year to visualise: </span>
-  <button formaction="/cgi-bin/1990.py">1990</button>
-  <button formaction="/cgi-bin/2000.py"> 2000</button>
-  <button formaction="/cgi-bin/2010.py">2010</button>
-  <button formaction="/cgi-bin/2013.py">2013</button>
+  <button formaction="/cgi-bin/main1990.py">1990</button>
+  <button formaction="/cgi-bin/main2000.py">2000</button>
+  <button formaction="/cgi-bin/main2010.py">2010</button>
+  <button formaction="/cgi-bin/main2013.py">2013</button>
   </form>
 
   <!-- creates a 'container' to hold the map visualization -->
@@ -84,7 +82,7 @@ print con
 cursor=db.cursor()
 
 #in each .py file a different table in the database in accessed
-cursor.execute("SELECT * FROM `1990`")
+cursor.execute("SELECT * FROM `2010`")
 
 #defines the colors to be returned by the chloropeth
 def filler(value):
@@ -132,9 +130,11 @@ map.labels();
 </br></br></br>
 <p>
    Carbon occurs naturally in the atmosphere, however, human activities alter the carbon cycle by adding more CO<sub>2</sub> to it. The main human activity that emits CO<sub>2</sub> is the combustion of fossil fuels (oil, natural gas, and coal).</p>
-
-<p>
-Changes in Carbon emissions are influenced by many factors, some being changes in population, seasonal temperatures, and new technologies. Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveals a slight increase in emissions (about 9%) since 1990, which reflects increased energy usage due to a growing population and changing economy.</p>
+   <p>
+ Changes in Carbon emissions are influenced by many factors, some being changes in population, seasonal temperatures, and new technologies. 
+ Visualizing this data is useful in analyzing trends present in changing CO<sub>2</sub> levels; this data reveals a slight increase in emissions (about 9%)
+ since 1990, which reflects increased energy usage due to a growing population and changing economy.
+</P>
 
 
 
