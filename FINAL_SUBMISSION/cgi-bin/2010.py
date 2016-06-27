@@ -1,10 +1,16 @@
 #!/usr/bin/env python
+"""
+This package shows the year of 2010 carbon emission data of united states. The data is shown on the map. The map is color
+coded based on the carbon emission, higher the carbon emission darker the color and vice versa. The map also shows the number 
+of carbon emission of each state ,it shows  state name, total, coal, petroleum and gas emission. This page has buttons which
+are linked to 2013, 1990 and 2000.
+"""
 import MySQLdb
 
 # open databases connection
 #here, please enter the the username, passwaord, and mysql database you created
 #you will have to do this for all four webpages
-db = MySQLdb.connect("localhost","root","password","pollutiondata")
+db = MySQLdb.connect("localhost","root","gorkha","pollutiondata")
 
 ##beginning of the HTML header/webpage
 print "content-type: text/html"
@@ -31,10 +37,10 @@ con = '''
   
   <!--Allows user to switch between years.  We had to link to multiple webpages -->
   <form> <span class="Button_explanation">Choose year to visualise: </span>
-  <button formaction="/cgi-bin/main.py">1990</button>
-  <button formaction="/cgi-bin/main2.py"> 2000</button>
-  <button formaction="/cgi-bin/main3.py">2010</button>
-  <button formaction="/cgi-bin/main4.py">2013</button>
+  <button formaction="/cgi-bin/main1990.py">1990</button>
+  <button formaction="/cgi-bin/main2000.py"> 2000</button>
+  <button formaction="/cgi-bin/main2010.py">2010</button>
+  <button formaction="/cgi-bin/main2013.py">2013</button>
   </form>
 
   <!-- creates a 'container' to hold the map visualization -->
@@ -137,4 +143,4 @@ map.labels();
 print footer
 
 # disconnect from server
-db.close()   
+db.close()
