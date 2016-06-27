@@ -1,0 +1,20 @@
+\begin{theindex}
+
+  \item {footer}
+    \subitem {main1990}, \hyperpage{4}
+    \subitem {main2000}, \hyperpage{5}
+    \subitem {main2010}, \hyperpage{6}
+    \subitem {main2013}, \hyperpage{7}
+
+  \indexspace
+
+  \item {main1990}, \hyperpage{3}
+    \subitem {footer}, \hyperpage{4}
+  \item {main2000}, \hyperpage{4}
+    \subitem {footer}, \hyperpage{5}
+  \item {main2010}, \hyperpage{5}
+    \subitem {footer}, \hyperpage{6}
+  \item {main2013}, \hyperpage{6}
+    \subitem {footer}, \hyperpage{7}
+
+\end{theindex}

@@ -35,10 +35,10 @@ con = '''
   
   <!--Allows user to switch between years.  We had to link to multiple webpages -->
   <form> <span class="Button_explanation">Choose year to visualise: </span>
-  <button formaction="/cgi-bin/main1990.py">1990</button>
-  <button formaction="/cgi-bin/main2000.py"> 2000</button>
-  <button formaction="/cgi-bin/main2010.py">2010</button>
-  <button formaction="/cgi-bin/main2013.py">2013</button>
+  <button formaction="/cgi-bin/1990.py">1990</button>
+  <button formaction="/cgi-bin/2000.py"> 2000</button>
+  <button formaction="/cgi-bin/2010.py">2010</button>
+  <button formaction="/cgi-bin/2013.py">2013</button>
   </form>
 
   <!-- creates a 'container' to hold the map visualization -->

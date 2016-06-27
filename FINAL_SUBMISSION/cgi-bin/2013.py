@@ -7,9 +7,9 @@ are linked to 1990, 2010 and 2000.
 """
 import MySQLdb
 
-# open databases connection
-#here, please enter the the username, password, and mysql database you created
-#you will have to do this for all four webpages
+## open databases connection
+##here, please enter the the username, password, and mysql database you created
+##you will have to do this for all four webpages
 db = MySQLdb.connect("localhost","root","gorkha","pollutiondata")
 
 ##beginning of the HTML header/webpage
@@ -36,10 +36,10 @@ con = '''
   
   <!--Allows user to switch between years.  We had to link to multiple webpages -->
   <form> <span class="Button_explanation">Choose year to visualise: </span>
-  <button formaction="/cgi-bin/main1990.py">1990</button>
-  <button formaction="/cgi-bin/main2000.py"> 2000</button>
-  <button formaction="/cgi-bin/main2010.py">2010</button>
-  <button formaction="/cgi-bin/main2013.py">2013</button>
+  <button formaction="/cgi-bin/1990.py">1990</button>
+  <button formaction="/cgi-bin/2000.py"> 2000</button>
+  <button formaction="/cgi-bin/2010.py">2010</button>
+  <button formaction="/cgi-bin/2013.py">2013</button>
   </form>
 
   <!-- creates a 'container' to hold the map visualization -->
@@ -79,10 +79,10 @@ con = '''
 print con
 cursor=db.cursor()
 
-#in each .py file a different table in the database in accessed
+##in each .py file a different table in the database in accessed
 cursor.execute("SELECT * FROM `2013`")
 
-#defines the colors to be returned by the chloropeth
+##defines the colors to be returned by the chloropeth
 def filler(value):
 	if value > 400:
 		return "400+"
@@ -99,7 +99,7 @@ def filler(value):
 	else:
 		return "0-50"
 
-#this loops through the database, and fills in values according to each state. 
+##this loops through the database, and fills in values according to each state. 
 for row in cursor.fetchall():
 	#print(row[0])
 	state = row[0]
@@ -142,5 +142,5 @@ map.labels();
 '''
 print footer
 
-# disconnect from server
+## disconnect from server
 db.close()   
