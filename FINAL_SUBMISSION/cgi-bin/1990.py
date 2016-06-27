@@ -13,7 +13,7 @@ import MySQLdb
 #here, please enter the the username, passwaord, and mysql database you created
 #you will have to do this for all four webpages
 
-db = MySQLdb.connect("localhost","root","gorkha","pollutiondata")
+db = MySQLdb.connect("localhost","root","password","pollutiondata")
 
 ##beginning of the HTML header/webpage
 print "content-type: text/html"
